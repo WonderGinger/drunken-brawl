@@ -13,6 +13,10 @@
     <background>background\bg_forest_temp</background>
   </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\sc_jump.gml</script>
+    <script>scripts\sc_run.gml</script>
+  </scripts>
   <objects name="objects">
     <objects name="Parents">
       <object>objects\p_static</object>
