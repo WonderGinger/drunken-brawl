@@ -1,2 +1,5 @@
-if keyboard_check(ord('A')) phy_speed_x = -run_speed;
-if keyboard_check(ord('D')) phy_speed_x = run_speed;
+key_left = keyboard_check(ord('A'))
+key_right = keyboard_check(ord('D'))
+if key_left phy_speed_x = -run_speed;
+else if key_right  phy_speed_x = run_speed;
+else st_player = ps.idle

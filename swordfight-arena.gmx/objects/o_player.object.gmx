@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///INIT
 run_speed = 7;
-jump_impulse = -30;
+jump_impulse = -50;
 jump_flag = false;
 
 phy_fixed_rotation = true;
@@ -56,7 +56,8 @@ phy_fixed_rotation = true;
 enum ps {
     idle,
     run,
-    jump
+    jump,
+    damaged
 }
 
 st_player = ps.idle;
@@ -127,6 +128,11 @@ switch (st_player)
         sc_run();
     } break;
     
+    case ps.damaged: {
+        sc_run();
+        sc_jump();
+        //Intangible, flash color, -1 hp
+    }
     default: {
         show_debug_message("Default state");
     }
@@ -187,16 +193,43 @@ if st_player = ps.jump and jump_flag {
         </arguments>
       </action>
     </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///DEBUG
+
+flags = phy_debug_render_shapes;
+//physics_world_draw_debug(flags);
+draw_self();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
   </events>
   <PhysicsObject>-1</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>0</PhysicsObjectShape>
   <PhysicsObjectDensity>0.5</PhysicsObjectDensity>
-  <PhysicsObjectRestitution>0.100000001490116</PhysicsObjectRestitution>
+  <PhysicsObjectRestitution>0</PhysicsObjectRestitution>
   <PhysicsObjectGroup>0</PhysicsObjectGroup>
   <PhysicsObjectLinearDamping>0.100000001490116</PhysicsObjectLinearDamping>
   <PhysicsObjectAngularDamping>0.100000001490116</PhysicsObjectAngularDamping>
-  <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
+  <PhysicsObjectFriction>0.899999976158142</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
