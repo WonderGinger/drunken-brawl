@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>p_dynamic</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -30,7 +30,8 @@ grav = .4;
 speed_x = 0;
 speed_y = 0;
 jumpspeed = 10;
-movespeed = 4;
+movespeed = 3;
+dir = 0;
 </string>
           </argument>
         </arguments>
@@ -56,11 +57,36 @@ movespeed = 4;
 enum ps {
     idle,
     run,
+    dash,
     jump,
     damaged
 }
 
 st_player = ps.idle;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// End of dash state
+st_player = ps.run;
 </string>
           </argument>
         </arguments>
@@ -88,25 +114,27 @@ switch (st_player)
 {
     case ps.idle: {
 //        sc_idle();
-        sc_player_normal();
+        sc_move();
     } break;
     
     case ps.run: {
-        sc_collideandmove();
+        sc_move();
         sc_jump();
     } break;
-    
+    case ps.dash: {
+        sc_dash();
+    }
     case ps.jump: {
-        sc_collideandmove();
+        sc_move();
     } break;
     
     case ps.damaged: {
-        sc_collideandmove();
+        sc_move();
         sc_jump();
         //Intangible, flash color, -1 hp
     }
     default: {
-        show_debug_message("Default state");
+        show_debug_message("Default state (this shouldn't happen)");
     }
 }
  
