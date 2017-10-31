@@ -26,7 +26,7 @@
       <object>objects\o_player</object>
     </objects>
     <objects name="Tiles">
-      <object>objects\o_floor</object>
+      <object>objects\o_platform</object>
     </objects>
     <objects name="Parents">
       <object>objects\p_static</object>
