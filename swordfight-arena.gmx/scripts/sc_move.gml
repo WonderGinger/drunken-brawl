@@ -10,9 +10,9 @@ if (key_up && place_meeting(x, y+1, p_static)) {
     speed_y = -jumpspeed
 }
 
-if(key_dash) {
+if(key_dash && speed_y <= 5) {
     st_player = ps.dash;
-    alarm[0] = room_speed/8;
+    alarm[0] = room_speed/6;
 }
 
 sc_collideandmove();
