@@ -30,8 +30,7 @@ grav = .4;
 speed_x = 0;
 speed_y = 0;
 jumpspeed = 10;
-movespeed = 3;
-dir = 0;
+movespeed = 6;
 </string>
           </argument>
         </arguments>
@@ -119,7 +118,6 @@ switch (st_player)
     
     case ps.run: {
         sc_move();
-        sc_jump();
     } break;
     case ps.dash: {
         sc_dash();
@@ -127,12 +125,6 @@ switch (st_player)
     case ps.jump: {
         sc_move();
     } break;
-    
-    case ps.damaged: {
-        sc_move();
-        sc_jump();
-        //Intangible, flash color, -1 hp
-    }
     default: {
         show_debug_message("Default state (this shouldn't happen)");
     }
