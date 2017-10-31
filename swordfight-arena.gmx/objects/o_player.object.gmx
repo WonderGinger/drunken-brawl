@@ -26,11 +26,11 @@
           <argument>
             <kind>1</kind>
             <string>///INIT
-run_speed = 7;
-jump_impulse = -50;
-jump_flag = false;
-
-phy_fixed_rotation = true;
+grav = .4;
+hsp = 0;
+vsp = 0;
+jumpspeed = 10;
+movespeed = 4;
 </string>
           </argument>
         </arguments>
@@ -66,29 +66,6 @@ st_player = ps.idle;
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>jump_flag = !jump_flag;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -110,26 +87,21 @@ st_player = ps.idle;
 switch (st_player)
 {
     case ps.idle: {
-        if keyboard_check(ord('A')) or keyboard_check(ord('D')){
-            st_player = ps.run;
-        }
-        sc_jump();
+//        sc_idle();
+        sc_player_normal();
     } break;
     
     case ps.run: {
-        if keyboard_check_released(vk_right){
-            st_player = ps.idle;
-        }
-        sc_run();
+        sc_collideandmove();
         sc_jump();
     } break;
     
     case ps.jump: {
-        sc_run();
+        sc_collideandmove();
     } break;
     
     case ps.damaged: {
-        sc_run();
+        sc_collideandmove();
         sc_jump();
         //Intangible, flash color, -1 hp
     }
@@ -143,85 +115,8 @@ switch (st_player)
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="p_dynamic">
-      <action>
-        <libid>1</libid>
-        <id>605</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>Comment to allow collision</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="p_static">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///FLOOR CHECKING
-
-if st_player = ps.jump and jump_flag {
-    st_player = ps.idle;
-    jump_flag = !jump_flag;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///DEBUG
-
-flags = phy_debug_render_shapes;
-//physics_world_draw_debug(flags);
-draw_self();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
   </events>
-  <PhysicsObject>-1</PhysicsObject>
+  <PhysicsObject>0</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>0</PhysicsObjectShape>
   <PhysicsObjectDensity>0.5</PhysicsObjectDensity>
@@ -232,8 +127,5 @@ draw_self();
   <PhysicsObjectFriction>0.899999976158142</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints>
-    <point>32,32</point>
-    <point>32,32</point>
-  </PhysicsShapePoints>
+  <PhysicsShapePoints/>
 </object>

@@ -15,13 +15,12 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\sc_jump.gml</script>
-    <script>scripts\sc_run.gml</script>
+    <script>scripts\sc_collideandmove.gml</script>
+    <script>scripts\sc_getinputs.gml</script>
+    <script>scripts\sc_idle.gml</script>
+    <script>scripts\sc_player_normal.gml</script>
   </scripts>
   <objects name="objects">
-    <objects name="Parents">
-      <object>objects\p_static</object>
-      <object>objects\p_dynamic</object>
-    </objects>
     <objects name="Player">
       <object>objects\o_player</object>
     </objects>
