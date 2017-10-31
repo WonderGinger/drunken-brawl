@@ -27,6 +27,9 @@
     <objects name="Tiles">
       <object>objects\o_floor</object>
     </objects>
+    <objects name="Parents">
+      <object>objects\p_static</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_arena</room>
