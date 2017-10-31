@@ -1,13 +1,18 @@
+var xsp = round(speed_x); //Convert theoretical value to an integer
+var ysp = round(speed_y); 
+
 //Horizontal collision
-if (place_meeting(round(x+hsp),round(y),o_floor)) {
-    while(!place_meeting(round(x+sign(hsp)),round(y),o_floor)) x += sign(hsp);
-    hsp = 0;
+if (place_meeting(x + xsp,y,o_floor)) {
+    while(!place_meeting(x+sign(xsp),y,o_floor)) x += sign(xsp);
+    speed_x = 0;
+    xsp = 0;
 }
-x += hsp;
+x += xsp;
 
 //Vertical collision
-if (place_meeting(round(x),round(y+vsp),o_floor)) {
-    while(!place_meeting(round(x),round(y + sign(vsp)),o_floor)) y += sign(vsp);
-    vsp = 0;
+if (place_meeting(x,y + ysp,o_floor)) {
+    while(!place_meeting(round(x),round(y + sign(ysp)),o_floor)) y += sign(ysp);
+    speed_y = 0;
+    ysp = 0;
 }
-y += vsp;
+y += ysp;

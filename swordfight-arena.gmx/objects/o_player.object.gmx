@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>///INIT
 grav = .4;
-hsp = 0;
-vsp = 0;
+speed_x = 0;
+speed_y = 0;
 jumpspeed = 10;
 movespeed = 4;
 </string>
