@@ -6,8 +6,12 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\s_player</sprite>
     <sprite>sprites\s_platform</sprite>
+    <sprites name="Player">
+      <sprite>sprites\s_player_walk</sprite>
+      <sprite>sprites\s_player_jump</sprite>
+      <sprite>sprites\s_player_dash</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_forest_temp</background>
