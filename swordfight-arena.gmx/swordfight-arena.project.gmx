@@ -12,6 +12,7 @@
       <sprite>sprites\s_player_jump</sprite>
       <sprite>sprites\s_player_dash</sprite>
     </sprites>
+    <sprite>sprites\s_dust</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_forest_temp</background>
@@ -26,16 +27,10 @@
     <script>scripts\sc_dash.gml</script>
   </scripts>
   <objects name="objects">
-    <objects name="Player">
-      <object>objects\o_player</object>
-    </objects>
-    <objects name="Tiles">
-      <object>objects\o_platform</object>
-    </objects>
-    <objects name="Parents">
-      <object>objects\p_static</object>
-      <object>objects\p_dynamic</object>
-    </objects>
+    <object>objects\o_player</object>
+    <object>objects\p_static</object>
+    <object>objects\o_platform</object>
+    <object>objects\o_dust</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_arena</room>

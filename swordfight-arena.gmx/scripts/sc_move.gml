@@ -12,6 +12,7 @@ if(xaxis != 0) image_xscale = xaxis;  // Flip sprite to direction of travel
 // Jump
 if (key_up && place_meeting(x, y+1, p_static)) {
     speed_y = -jumpspeed
+    repeat(choose(5,15)) instance_create(x,bbox_bottom,o_dust);
     jumping = true
 }
 

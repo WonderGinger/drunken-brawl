@@ -1,7 +1,7 @@
 //Change animation
 
 var spd_wanted = 4 * movespeed * xaxis;
-
+repeat(choose(1,2)) instance_create(x,bbox_bottom,o_dust); //Dust animation
 speed_x += (spd_wanted - speed_x) * 0.1; // Smoothly accelerate / decelerate
 if(abs(spd_wanted) > movespeed - 1) {
     image_speed = 0.4;
