@@ -13,6 +13,7 @@
       <sprite>sprites\s_player_dash</sprite>
     </sprites>
     <sprite>sprites\s_dust</sprite>
+    <sprite>sprites\s_hitbox</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_forest_temp</background>
@@ -31,6 +32,7 @@
     <object>objects\p_static</object>
     <object>objects\o_platform</object>
     <object>objects\o_dust</object>
+    <object>objects\o_hitbox</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_arena</room>
