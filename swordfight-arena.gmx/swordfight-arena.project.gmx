@@ -21,7 +21,6 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\sc_jump.gml</script>
     <script>scripts\sc_collideandmove.gml</script>
     <script>scripts\sc_getinputs.gml</script>
     <script>scripts\sc_idle.gml</script>

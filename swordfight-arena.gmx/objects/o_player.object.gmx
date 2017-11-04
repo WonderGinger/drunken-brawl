@@ -56,14 +56,11 @@ image_speed = img_spd;
             <string>///STATES
 
 enum ps {
-    idle,
     run,
-    dash,
-    jump,
-    damaged
+    dash
 }
 
-st_player = ps.idle;
+st_player = ps.run;
 </string>
           </argument>
         </arguments>
@@ -137,19 +134,11 @@ st_player = ps.run;
             <string>///STATE MACHINE
 switch (st_player)
 {
-    case ps.idle: {
-//        sc_idle();
-        sc_move();
-    } break;
-    
     case ps.run: {
         sc_move();
     } break;
     case ps.dash: {
         sc_dash();
-    }
-    case ps.jump: {
-        sc_move();
     } break;
     default: {
         show_debug_message("Default state (this shouldn't happen)");
