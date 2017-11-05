@@ -1,5 +1,3 @@
-sc_getinputs();
-
 var spd_wanted = 0; //The theoretical speed for this step
 
 spd_wanted += movespeed * xaxis;
