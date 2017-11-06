@@ -20,6 +20,7 @@ if (vcollide != noone){
         speed_y = 0;
         ysp = 0;
     }
+    ysp += key_down;
 }
 
 if(place_meeting(x,y+ysp, o_wall)) {
@@ -28,4 +29,3 @@ if(place_meeting(x,y+ysp, o_wall)) {
     ysp = 0;
 }
 y += ysp;
-
