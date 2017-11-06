@@ -36,6 +36,7 @@
     <object>objects\o_hitbox</object>
     <object>objects\o_wall</object>
     <object>objects\p_player</object>
+    <object>objects\o_pause</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_arena</room>
