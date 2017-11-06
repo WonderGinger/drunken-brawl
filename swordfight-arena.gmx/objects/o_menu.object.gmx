@@ -26,8 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>/// INIT
-pause = 0;
-menu[0] = "Continue";
+menu[0] = "Start";
 menu[1] = "Tutorial";
 menu[2] = "Exit";
 
@@ -67,7 +66,7 @@ if(move != 0){
     if(mpos &gt; array_length_1d(menu) - 1) mpos = 0;
 }
 var push = max(0, keyboard_check_released(vk_space), keyboard_check_released(vk_enter));
-if(push == 1) sc_pause();
+if(push == 1) sc_menu();
 </string>
           </argument>
         </arguments>
@@ -90,66 +89,23 @@ if(push == 1) sc_pause();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// PAUSE MENU GRAPHICS
+            <string>/// MENU GRAPHICS
 
-if(pause){/*
-    draw_set_color(c_black);
-    draw_rectangle(room_width*2/5, room_height*2/5, room_width*3/5, room_height*3/5, 0);
-    draw_set_color(c_white);
-    draw_rectangle(room_width*2/5, room_height*2/5, room_width*3/5, room_height*3/5, 1);
-    draw_set_halign(fa_center);
-    draw_set_font(f_menu);
-    draw_text(room_width/2, room_height/2, "Game Paused");*/
-    
-    // Dim background
-    draw_set_color(c_black);
-    draw_set_alpha(0.7);  // Opacity of dimming overlay
-    draw_rectangle(0,0,room_width, room_height, 0);
-    
-    // Draw menu text
-    draw_set_alpha(1);
-    draw_set_halign(fa_center);
-    draw_set_valign(fa_middle);
-    draw_set_font(f_menu);
-    
-    for(var i = 0; i &lt; array_length_1d(menu); i+=1){
-        if(i == mpos) draw_set_color(c_white);
-        else draw_set_color(c_gray);
-        draw_text(room_width/2, room_height/2 + (i * padding), string(menu[i]));
-    }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="27">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// PAUSE OR UNPAUSE
+// Dim background
+draw_set_color(c_black);
+draw_set_alpha(0.7);  // Opacity of dimming overlay
+draw_rectangle(0,0,room_width, room_height, 0);
 
-if(!pause){
-    pause = 1;
-    mpos = 0;
-    instance_deactivate_all(true);
-}
-else {
-    pause = 0;
-    instance_activate_all();
+// Draw menu text
+draw_set_alpha(1);
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
+draw_set_font(f_menu);
+
+for(var i = 0; i &lt; array_length_1d(menu); i+=1){
+    if(i == mpos) draw_set_color(c_white);
+    else draw_set_color(c_gray);
+    draw_text(room_width/2, room_height/2 + (i * padding), string(menu[i]));
 }
 </string>
           </argument>

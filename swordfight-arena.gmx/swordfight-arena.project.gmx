@@ -26,7 +26,12 @@
     <script>scripts\sc_idle.gml</script>
     <script>scripts\sc_move.gml</script>
     <script>scripts\sc_dash.gml</script>
+    <script>scripts\sc_menu.gml</script>
+    <script>scripts\sc_pause.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\f_menu</font>
+  </fonts>
   <objects name="objects">
     <object>objects\o_player_1</object>
     <object>objects\o_player_2</object>
@@ -37,9 +42,11 @@
     <object>objects\o_wall</object>
     <object>objects\p_player</object>
     <object>objects\o_pause</object>
+    <object>objects\o_menu</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_arena</room>
+    <room>rooms\r_splash</room>
+    <room>rooms\r_arena</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
