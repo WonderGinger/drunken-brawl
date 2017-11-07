@@ -34,8 +34,9 @@ movespeed = 6;
 img_spd = .12;
 image_speed = img_spd;
 image_xscale = -1;
-
-st_player = ps.run;
+jumpsquat = false;
+grounded = true;
+st_player = ps.idle;
 
 </string>
           </argument>
@@ -59,7 +60,8 @@ st_player = ps.run;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>sprite_index = s_player_walk
+            <string>/// End jump animation
+jumpsquat = 0;
 image_speed = img_spd;
 </string>
           </argument>
@@ -84,7 +86,9 @@ image_speed = img_spd;
           <argument>
             <kind>1</kind>
             <string>/// End of dash state
-st_player = ps.run;
+sprite_index = s_player_run
+image_speed = img_spd;
+st_player = ps.move;
 </string>
           </argument>
         </arguments>
@@ -111,7 +115,10 @@ st_player = ps.run;
 sc_getinputs(1);
 switch (st_player)
 {
-    case ps.run: {
+    case ps.idle: {
+        sc_move();
+    } break;
+    case ps.move: {
         sc_move();
     } break;
     case ps.dash: {

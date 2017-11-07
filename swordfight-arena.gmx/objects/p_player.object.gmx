@@ -28,11 +28,13 @@
             <string>///STATES
 
 enum ps {
-    run,
+    idle,
+    move,
+    jump,
     dash
 }
 
-st_player = ps.run;
+st_player = ps.idle;
 </string>
           </argument>
         </arguments>

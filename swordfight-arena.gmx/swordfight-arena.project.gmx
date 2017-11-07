@@ -25,7 +25,7 @@
   <scripts name="scripts">
     <script>scripts\sc_collideandmove.gml</script>
     <script>scripts\sc_getinputs.gml</script>
-    <script>scripts\sc_idle.gml</script>
+    <script>scripts\sc_jump.gml</script>
     <script>scripts\sc_move.gml</script>
     <script>scripts\sc_dash.gml</script>
     <script>scripts\sc_menu.gml</script>

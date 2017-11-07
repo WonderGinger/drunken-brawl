@@ -11,19 +11,10 @@ speed_x += (spd_wanted - speed_x) * 0.1;
 if(key_down) speed_y += 1;
 
 // Animation logic
-if(abs(spd_wanted) > movespeed - 1) {
-    image_speed = 0.4;
-    if (sprite_index == s_player_walk) sprite_index = s_player_jump
-    else sprite_index = s_player_dash
-}
-else {
-    image_speed = img_spd;
-    sprite_index = s_player_walk
-}
+image_speed = 0.4;
+sprite_index = s_player_dash;
+
 // Jump
-if (key_up && place_meeting(x, y+1, p_static)) {
-    speed_y = -jumpspeed
-    repeat(choose(5,15)) instance_create(x,bbox_bottom,o_dust);
-}
+sc_jump();
 
 sc_collideandmove();

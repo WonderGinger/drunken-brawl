@@ -1,5 +1,5 @@
-if keyboard_check_pressed(ord('W')){
-    st_player = ps.jump;
-//    physics_apply_impulse(x,y,0,jump_impulse);
-    alarm[0] = 5;
+if (key_up && place_meeting(x, y+1, p_static)) {
+    speed_y = -jumpspeed;
+    jumpsquat = true;
+    repeat(choose(5,15)) instance_create(x,bbox_bottom,o_dust);
 }

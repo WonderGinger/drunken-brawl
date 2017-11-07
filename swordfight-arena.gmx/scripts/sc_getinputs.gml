@@ -5,19 +5,16 @@ if(player == 0){
     key_right = keyboard_check(ord('D'));
     key_up = keyboard_check_pressed(ord('W'));
     key_down = keyboard_check(ord('S'));
-    key_dash = keyboard_check_pressed(ord('C'));
-    key_dash_held = keyboard_check(ord('C'));
-    
-    //Keyboard
-    xaxis = (key_right - key_left)
-    yaxis = (key_down - key_up)
+    key_dash = keyboard_check_pressed(ord('V'));
+    key_dash_held = keyboard_check(ord('V'));
 }
 else if(player == 1) {
     key_left = keyboard_check(ord('J'));
     key_right = keyboard_check(ord('L'));
     key_up = keyboard_check_pressed(ord('I'));
     key_down = keyboard_check(ord('K'));
-    key_dash = keyboard_check_pressed(190); //'.' key
+    key_dash = keyboard_check_pressed(191); //',' key
+    key_dash_held = keyboard_check(191);
     
     //Keyboard
     xaxis = (key_right - key_left)

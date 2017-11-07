@@ -1,4 +1,5 @@
 var spd_wanted = 0; //The theoretical speed for this step
+xaxis = (key_right - key_left);
 
 spd_wanted += movespeed * xaxis;
 
@@ -8,17 +9,13 @@ speed_y += grav;
 if(xaxis != 0) image_xscale = xaxis;  // Flip sprite to direction of travel
 
 // Jump
-if (key_up && place_meeting(x, y+1, p_static)) {
-    speed_y = -jumpspeed
-    repeat(choose(5,10)) instance_create(x,bbox_bottom,o_dust);
-}
+sc_jump();
 
 // Dash
 if(key_dash && (key_left || key_right)) { // If dash key pressed, and not going too slow.
     if(speed_y != 0) speed_y = 0;
     st_player = ps.dash;
     alarm[0] = room_speed/7; //Length of dash
-    alarm[1] = room_speed/2; //Length of animation
 }
 
 sc_collideandmove();
