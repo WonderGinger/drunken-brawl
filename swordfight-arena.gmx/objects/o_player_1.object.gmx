@@ -154,5 +154,8 @@ switch (st_player)
   <PhysicsObjectFriction>0.899999976158142</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints/>
+  <PhysicsShapePoints>
+    <point>36,88</point>
+    <point>44,44</point>
+  </PhysicsShapePoints>
 </object>

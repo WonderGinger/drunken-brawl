@@ -11,6 +11,8 @@
       <sprite>sprites\s_player_walk</sprite>
       <sprite>sprites\s_player_jump</sprite>
       <sprite>sprites\s_player_dash</sprite>
+      <sprite>sprites\s_player_run</sprite>
+      <sprite>sprites\s_player_idle</sprite>
     </sprites>
     <sprite>sprites\s_dust</sprite>
     <sprite>sprites\s_hitbox</sprite>
