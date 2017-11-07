@@ -44,6 +44,7 @@
     <object>objects\o_pause</object>
     <object>objects\o_menu</object>
     <object>objects\o_camera</object>
+    <object>objects\o_tutorial</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\r_splash</room>

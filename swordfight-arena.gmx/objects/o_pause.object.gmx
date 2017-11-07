@@ -28,8 +28,8 @@
             <string>/// INIT
 pause = 0;
 menu[0] = "Continue";
-menu[1] = "Tutorial";
-menu[2] = "Exit";
+menu[1] = "Exit to menu";
+menu[2] = "Quit";
 
 padding = 64;
 mpos = 0;
@@ -115,7 +115,13 @@ if(pause){/*
     for(var i = 0; i &lt; array_length_1d(menu); i+=1){
         if(i == mpos) draw_set_color(c_white);
         else draw_set_color(c_gray);
-        draw_text(view_wport[0]/2, view_hport[0]/2 + (i * padding), string(menu[i]));
+        var xscale = room_width/view_wview[0];
+        var yscale = room_height/view_hview[0];
+        draw_text_transformed(
+            view_xview + view_wview[0]/2, view_yview + view_hview[0]/2 + (i * padding), 
+            string(menu[i]),
+            1/xscale, 1/yscale, 0
+        );
     }
 }
 </string>
@@ -142,13 +148,14 @@ if(pause){/*
             <kind>1</kind>
             <string>/// PAUSE OR UNPAUSE
 
-if(!pause){
+if(!pause){ // Pausing
     pause = 1;
     mpos = 0;
     instance_deactivate_all(true);
 }
-else {
+else { //Unpausing
     pause = 0;
+
     instance_activate_all();
 }
 </string>
