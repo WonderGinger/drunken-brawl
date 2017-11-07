@@ -56,7 +56,7 @@ mpos = 0;
           <argument>
             <kind>1</kind>
             <string>/// Menu actions
-
+if(!pause) exit;
 var move = 0;
 move -= max( keyboard_check_pressed(ord('W')), keyboard_check_pressed(ord('I')), 0);
 move += max( keyboard_check_pressed(ord('S')), keyboard_check_pressed(ord('K')), 0);
@@ -115,7 +115,7 @@ if(pause){/*
     for(var i = 0; i &lt; array_length_1d(menu); i+=1){
         if(i == mpos) draw_set_color(c_white);
         else draw_set_color(c_gray);
-        draw_text(room_width/2, room_height/2 + (i * padding), string(menu[i]));
+        draw_text(view_wport[0]/2, view_hport[0]/2 + (i * padding), string(menu[i]));
     }
 }
 </string>

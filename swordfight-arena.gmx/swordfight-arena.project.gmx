@@ -43,9 +43,11 @@
     <object>objects\p_player</object>
     <object>objects\o_pause</object>
     <object>objects\o_menu</object>
+    <object>objects\o_camera</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\r_splash</room>
+    <room>rooms\r_tutorial</room>
     <room>rooms\r_arena</room>
   </rooms>
   <help>
