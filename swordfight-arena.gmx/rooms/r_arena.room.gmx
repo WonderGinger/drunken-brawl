@@ -303,6 +303,7 @@
     <instance objName="o_player_2" x="1440" y="864" name="inst_4C943B3A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_pause" x="224" y="192" name="inst_FF7C172E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_camera" x="160" y="192" name="inst_272ADF52" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_player_1" x="416" y="32" name="inst_74117636" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

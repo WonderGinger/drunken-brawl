@@ -33,6 +33,8 @@ jumpspeed = 10;
 movespeed = 6;
 img_spd = .12;
 image_speed = img_spd;
+image_xscale = 1;
+
 st_player = ps.run;
 </string>
           </argument>
