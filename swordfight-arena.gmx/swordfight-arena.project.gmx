@@ -20,6 +20,7 @@
     <sprite>sprites\s_dust</sprite>
     <sprite>sprites\s_hitbox</sprite>
     <sprite>sprites\s_wall</sprite>
+    <sprite>sprites\s_dash_dust</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_forest_temp</background>
