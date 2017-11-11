@@ -12,6 +12,9 @@
       <sprite>sprites\s_player_jump</sprite>
       <sprite>sprites\s_player_dash</sprite>
       <sprite>sprites\s_player_run</sprite>
+      <sprite>sprites\s_player_attack</sprite>
+      <sprite>sprites\s_player_jump_fall</sprite>
+      <sprite>sprites\s_player_jump_attack</sprite>
       <sprite>sprites\s_player_idle</sprite>
     </sprites>
     <sprite>sprites\s_dust</sprite>
