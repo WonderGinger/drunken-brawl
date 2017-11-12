@@ -8,6 +8,10 @@ speed_y += grav;
 
 if(xaxis != 0) image_xscale = xaxis;  // Flip sprite to direction of travel
 
+// Grounded logic
+grounded = !(speed_y != 0 && speed_y != grav && speed_y != 2*grav)
+//show_debug_message(string(speed_y) + "   |   " + string(grounded));
+
 // Jump
 sc_jump();
 

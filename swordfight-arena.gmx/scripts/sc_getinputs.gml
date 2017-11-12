@@ -15,11 +15,10 @@ else if(player == 1) {
     key_down = keyboard_check(ord('K'));
     key_dash = keyboard_check_pressed(191); //',' key
     key_dash_held = keyboard_check(191);
-    
-    //Keyboard
-    xaxis = (key_right - key_left)
-    yaxis = (key_down - key_up)
 }
+xaxis = (key_right - key_left)
+yaxis = (key_down - key_up)
+
 //Controllers
 if (gamepad_is_connected(player)) {
     show_debug_message(gamepad_get_device_count());

@@ -51,6 +51,7 @@
     <object>objects\o_menu</object>
     <object>objects\o_camera</object>
     <object>objects\o_tutorial</object>
+    <object>objects\o_dash_dust</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\r_splash</room>
