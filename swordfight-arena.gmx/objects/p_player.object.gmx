@@ -31,7 +31,8 @@ enum ps {
     idle,
     move,
     jump,
-    dash
+    dash,
+    attack
 }
 
 st_player = ps.idle;

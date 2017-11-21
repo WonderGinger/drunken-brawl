@@ -118,8 +118,14 @@ switch (st_player)
         sprite_index = s_player_idle;
         image_speed = img_spd;
         if(jumpsquat || key_left || key_right) st_player = ps.move;
+        if(key_attack) {
+            st_player = ps.attack; 
+            sprite_index = s_player_attack;
+            image_index = 0;
+        }
     } break;
-    case ps.move: {
+     case ps.move: {
+        sc_move();
         image_speed = img_spd;
         if(jumpsquat){
             st_player = ps.jump; 
@@ -135,7 +141,11 @@ switch (st_player)
         if(abs(speed_x) &lt; .2 &amp;&amp; abs(speed_y) &lt; 1) {
             st_player = ps.idle;
         }
-        sc_move();
+        if(key_attack) {
+            st_player = ps.attack; 
+            sprite_index = s_player_attack;
+            image_index = 0;
+        }
     } break;
     case ps.jump: {
         sc_move();
@@ -148,9 +158,31 @@ switch (st_player)
             }
         }
         if(grounded) st_player = ps.move;
+        if(key_attack) { 
+            st_player = ps.attack; 
+            sprite_index = s_player_jump_attack;
+            image_index = 0;
+        }
     } break;
     case ps.dash: {
         sc_dash();
+    } break;
+    case ps.attack: {
+        sc_move();
+        image_speed = img_spd;
+        if(image_index &gt; image_number - 1){
+           st_player = ps.move;
+        }
+        if(image_index &gt;= 1 &amp;&amp; image_index &lt;= 2){
+            with(instance_create(x,y,o_hitbox)){
+                image_xscale = other.image_xscale;
+                with(instance_place(x,y,o_player_1)){
+                    speed_y = -10;
+                    speed_x = sign(x - other.x) * 10;
+                    image_xscale = -sign(speed_x);
+                }
+            }        
+        }    
     } break;
     default: {
         show_debug_message("Default state (missing break statement)");

@@ -7,6 +7,7 @@ if(player == 0){
     key_down = keyboard_check(ord('S'));
     key_dash = keyboard_check_pressed(ord('V'));
     key_dash_held = keyboard_check(ord('V'));
+    key_attack = keyboard_check(ord('E'));
 }
 else if(player == 1) {
     key_left = keyboard_check(ord('J'));
@@ -15,6 +16,7 @@ else if(player == 1) {
     key_down = keyboard_check(ord('K'));
     key_dash = keyboard_check_pressed(191); //',' key
     key_dash_held = keyboard_check(191);
+    key_attack = keyboard_check(ord('O'));
 }
 xaxis = (key_right - key_left)
 yaxis = (key_down - key_up)
