@@ -128,14 +128,9 @@ switch (st_player)
         }
         
         //Animation
-        if(grounded || abs(speed_x) &gt; movespeed-1) 
+        if(grounded &amp;&amp; abs(speed_x) &gt; movespeed-1) 
             sprite_index = s_player_run;
-        else if (!grounded) sprite_index = s_player_walk;
-        
-        if(image_index &gt; image_number - 1){
-            st_player = ps.move;
-            jumpsquat = false;
-        }
+        else if (grounded) sprite_index = s_player_walk;
         
         if(abs(speed_x) &lt; .2 &amp;&amp; abs(speed_y) &lt; 1) {
             st_player = ps.idle;
