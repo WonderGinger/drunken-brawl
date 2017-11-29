@@ -12,6 +12,7 @@ if(hcollide != noone){
 }
 x += xsp;
 
+
 //Vertical collision
 var vcollide = instance_place(x,y+ysp,p_static);
 if (vcollide != noone){
