@@ -37,7 +37,7 @@ image_xscale = -1;
 jumpsquat = false;
 grounded = true;
 st_player = ps.idle;
-
+hp = 3;
 </string>
           </argument>
         </arguments>
@@ -180,6 +180,7 @@ switch (st_player)
                     speed_y = -10;
                     speed_x = sign(x - other.x) * 10;
                     image_xscale = -sign(speed_x);
+                    hp -= 1;
                 }
             }        
         }    

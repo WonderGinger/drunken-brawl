@@ -37,7 +37,7 @@ image_xscale = 1;
 jumpsquat = false;
 grounded = true;
 st_player = ps.idle;
-
+hp = 3;
 </string>
           </argument>
         </arguments>
@@ -177,9 +177,10 @@ switch (st_player)
             with(instance_create(x,y,o_hitbox)){
                 image_xscale = other.image_xscale;
                 with(instance_place(x,y,o_player_2)){
-                    speed_y = -10;
-                    speed_x = sign(x - other.x) * 10;
+                    speed_y = -8;
+                    speed_x = sign(x - other.x) * 40;
                     image_xscale = -sign(speed_x);
+                    hp -= 1;
                 }
             }        
         }    
