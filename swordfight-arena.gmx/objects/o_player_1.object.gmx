@@ -111,6 +111,7 @@ st_player = ps.move;
             <kind>1</kind>
             <string>///STATE MACHINE
 sc_getinputs(0);
+if (hp &lt; 1) room_restart();
 switch (st_player)
 {
     case ps.idle: {

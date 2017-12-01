@@ -27,8 +27,7 @@
             <kind>1</kind>
             <string>/// INIT
 controls_global = 
-"Esc - Pause game
-R - Reset level";
+"Esc - Pause game";
 
 controls_p1 = 
 "Player 1:

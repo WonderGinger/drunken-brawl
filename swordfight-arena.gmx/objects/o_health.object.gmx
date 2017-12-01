@@ -25,9 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_color(c_black);
-draw_text_transformed(860,1000, o_player_1.hp, .5,.5,0);
-draw_text_transformed(1060,1000, o_player_2.hp, .5,.5,0);
+            <string>draw_set_color(c_white);
+var p1_hp = "P1#" + string(o_player_1.hp);
+var p2_hp = "P2#" + string(o_player_2.hp);
+draw_text_transformed(860,1000, p1_hp, .5,.5,0);
+draw_text_transformed(1060,1000, p2_hp, .5,.5,0);
+
+draw_text_transformed(960,960, "Health", .5,.5,0);
 </string>
           </argument>
         </arguments>

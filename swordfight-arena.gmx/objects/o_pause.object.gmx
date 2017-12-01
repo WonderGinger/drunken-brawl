@@ -28,8 +28,9 @@
             <string>/// INIT
 pause = 0;
 menu[0] = "Continue";
-menu[1] = "Exit to menu";
-menu[2] = "Quit";
+menu[1] = "Restart";
+menu[2] = "Exit to menu";
+menu[3] = "Quit";
 
 padding = 64;
 mpos = 0;
@@ -92,15 +93,7 @@ if(push == 1) sc_pause();
             <kind>1</kind>
             <string>/// PAUSE MENU GRAPHICS
 
-if(pause){/*
-    draw_set_color(c_black);
-    draw_rectangle(room_width*2/5, room_height*2/5, room_width*3/5, room_height*3/5, 0);
-    draw_set_color(c_white);
-    draw_rectangle(room_width*2/5, room_height*2/5, room_width*3/5, room_height*3/5, 1);
-    draw_set_halign(fa_center);
-    draw_set_font(f_menu);
-    draw_text(room_width/2, room_height/2, "Game Paused");*/
-    
+if(pause){    
     // Dim background
     draw_set_color(c_black);
     draw_set_alpha(0.7);  // Opacity of dimming overlay
