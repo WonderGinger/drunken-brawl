@@ -22,9 +22,12 @@
     <sprite>sprites\s_dust</sprite>
     <sprite>sprites\s_dash_dust</sprite>
     <sprite>sprites\s_out_of_bounds</sprite>
+    <sprite>sprites\s_p1_health</sprite>
+    <sprite>sprites\s_p2_health</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_forest_temp</background>
+    <background>background\bg_splash</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -35,6 +38,7 @@
     <script>scripts\sc_dash.gml</script>
     <script>scripts\sc_menu.gml</script>
     <script>scripts\sc_pause.gml</script>
+    <script>scripts\sc_health.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\f_menu</font>
