@@ -39,6 +39,8 @@
     <script>scripts\sc_menu.gml</script>
     <script>scripts\sc_pause.gml</script>
     <script>scripts\sc_health.gml</script>
+    <script>scripts\sc_reset.gml</script>
+    <script>scripts\sc_player_hit.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\f_menu</font>
@@ -52,13 +54,16 @@
     <object>objects\o_hitbox</object>
     <object>objects\o_wall</object>
     <object>objects\p_player</object>
-    <object>objects\o_pause</object>
-    <object>objects\o_menu</object>
-    <object>objects\o_camera</object>
-    <object>objects\o_tutorial</object>
     <object>objects\o_dash_dust</object>
-    <object>objects\o_health</object>
     <object>objects\o_out_of_bounds</object>
+    <objects name="utility">
+      <object>objects\o_menu</object>
+      <object>objects\o_tutorial</object>
+      <object>objects\o_camera</object>
+      <object>objects\o_player_hit</object>
+      <object>objects\o_health</object>
+      <object>objects\o_pause</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\r_splash</room>

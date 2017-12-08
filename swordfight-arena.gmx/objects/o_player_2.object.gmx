@@ -38,6 +38,9 @@ jumpsquat = false;
 grounded = true;
 st_player = ps.idle;
 hp = 3;
+x_init = x;
+y_init = y;
+invincible = false;
 </string>
           </argument>
         </arguments>
@@ -176,12 +179,11 @@ switch (st_player)
         }
         if(image_index &gt;= 1 &amp;&amp; image_index &lt;= 2){
             with(instance_create(x,y,o_hitbox)){
-                image_xscale = other.image_xscale;
                 with(instance_place(x,y,o_player_1)){
-                    speed_y = -10;
-                    speed_x = sign(x - other.x) * 10;
-                    image_xscale = -sign(speed_x);
-                    hp -= 1;
+                    if(!invincible){
+                        hp -= 1;
+                        sc_player_hit();
+                    }
                 }
             }        
         }    

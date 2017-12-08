@@ -1,3 +1,4 @@
+if(invincible) exit;
 var spd_wanted = 0; //The theoretical speed for this step
 xaxis = (key_right - key_left);
 
