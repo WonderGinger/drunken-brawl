@@ -44,6 +44,7 @@
   </scripts>
   <fonts name="fonts">
     <font>fonts\f_menu</font>
+    <font>fonts\f_countdown</font>
   </fonts>
   <objects name="objects">
     <object>objects\o_player_1</object>
@@ -63,6 +64,7 @@
       <object>objects\o_player_hit</object>
       <object>objects\o_health</object>
       <object>objects\o_pause</object>
+      <object>objects\o_start</object>
     </objects>
   </objects>
   <rooms name="rooms">

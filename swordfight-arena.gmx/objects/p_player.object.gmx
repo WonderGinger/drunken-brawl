@@ -32,10 +32,11 @@ enum ps {
     move,
     jump,
     dash,
-    attack
+    attack,
+    frozen
 }
 
-st_player = ps.idle;
+st_player = ps.frozen;
 </string>
           </argument>
         </arguments>

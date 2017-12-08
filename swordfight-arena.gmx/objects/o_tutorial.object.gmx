@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>/// INIT
+o_player_1.st_player = ps.idle;
 controls_global = 
 "Esc - Pause game";
 

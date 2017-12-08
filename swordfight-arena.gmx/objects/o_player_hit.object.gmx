@@ -55,6 +55,7 @@ sc_reset();
 //instance_create(0,0,o_camera);
 o_player_1.invincible = false;
 o_player_2.invincible = false;
+instance_create(0,0,o_start);
 </string>
           </argument>
         </arguments>

@@ -11,4 +11,3 @@ with(o_player_2){
     speed_y = 0;
 }
 instance_create(0,0,o_player_hit);
-//with(o_camera) instance_destroy();

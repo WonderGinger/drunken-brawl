@@ -74,7 +74,7 @@ if(push == 1) sc_menu();
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="0">
+    <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -103,11 +103,14 @@ draw_set_alpha(1);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 draw_set_font(f_menu);
-
+display_set_gui_size(room_width, room_height);
 for(var i = 0; i &lt; array_length_1d(menu); i+=1){
     if(i == mpos) draw_set_color(c_white);
     else draw_set_color(c_gray);
-    draw_text(room_width/2, room_height/2 + (i * padding), string(menu[i]));
+    draw_text_transformed(room_width/2, //X location
+    room_height/2 + (i * padding), //Y location
+    string(menu[i]), // Text
+    .7, .7, 0); //Xscale, Yscale, Rotation
 }
 </string>
           </argument>

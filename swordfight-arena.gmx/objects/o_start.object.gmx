@@ -25,21 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// INIT
-pause = 0;
-menu[0] = "Continue";
-menu[1] = "Restart";
-menu[2] = "Exit to menu";
-menu[3] = "Quit";
-
-padding = 64;
-mpos = 0;
+            <string>timer = room_speed * 4;
+alarm[0] = timer;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -56,22 +49,25 @@ mpos = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Menu actions
-if(!pause) exit;
-var move = 0;
-move -= max( keyboard_check_pressed(ord('W')), keyboard_check_pressed(ord('I')), 0);
-move += max( keyboard_check_pressed(ord('S')), keyboard_check_pressed(ord('K')), 0);
-
-if(move != 0){
-    mpos += move;
-    if(mpos &lt; 0) mpos = array_length_1d(menu) - 1;
-    if(mpos &gt; array_length_1d(menu) - 1) mpos = 0;
-}
-var push = max(0, keyboard_check_released(vk_space), keyboard_check_released(vk_enter));
-if(push == 1) sc_pause();
+            <string>o_player_1.st_player = ps.idle;
+o_player_2.st_player = ps.idle;
 </string>
           </argument>
         </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>203</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_kill_object</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
       </action>
     </event>
     <event eventtype="8" enumb="64">
@@ -91,64 +87,15 @@ if(push == 1) sc_pause();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// PAUSE MENU GRAPHICS
+            <string>if(timer &gt; 0) timer--;
+draw_set_font(f_countdown);
 display_set_gui_size(room_width, room_height);
-if(pause){    
-    // Dim background
-    draw_set_color(c_black);
-    draw_set_alpha(0.7);  // Opacity of dimming overlay
-    draw_rectangle(0,0,room_width, room_height, 0);
-    
-    // Draw menu text
-    draw_set_alpha(1);
-    draw_set_halign(fa_center);
-    draw_set_valign(fa_middle);
-    draw_set_font(f_menu);
-    
-    for(var i = 0; i &lt; array_length_1d(menu); i+=1){
-        if(i == mpos) draw_set_color(c_white);
-        else draw_set_color(c_gray);
-        draw_text_transformed(
-            room_width/2, //X location
-            room_height/2 + (i * padding), //Y location
-            string(menu[i]), //Text
-            0.7, 0.7, 0 //Xscale, Yscale, Rotation
-        );
-    }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="27">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// PAUSE OR UNPAUSE
-
-if(!pause){ // Pausing
-    pause = 1;
-    mpos = 0;
-    instance_deactivate_all(true);
-}
-else { //Unpausing
-    pause = 0;
-
-    instance_activate_all();
+draw_set_colour(c_white);
+seconds = floor(timer/60);
+if(seconds == 0) {
+    draw_text_transformed(room_width/2, room_height/2, "GO!", 1.5, 1.5, 0);
+} else {
+    draw_text_transformed(room_width/2, room_height/2, string(seconds), 1, 1, 0);
 }
 </string>
           </argument>
