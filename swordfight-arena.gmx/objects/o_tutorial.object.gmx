@@ -71,11 +71,11 @@ O - Attack";
             <kind>1</kind>
             <string>draw_set_alpha(0.9);
 draw_set_colour(c_black);
-draw_rectangle(75,75,600,280,0)
+draw_rectangle(75,75,600,325,0)
 
 draw_set_alpha(1);
 draw_set_colour(c_white);
-draw_rectangle(75,75,600,280,1);
+draw_rectangle(75,75,600,325,1);
 draw_set_font(f_menu);
 var scale = 0.5;
 draw_set_valign(fa_middle);
