@@ -35,8 +35,8 @@ W - Jump
 A - Left
 S - Fall through platform
 D - Right
-V - Dash
-E - Attack";
+C - Dash
+V - Attack";
 
 controls_p2 = 
 "Player 2:
@@ -44,8 +44,8 @@ I - Jump
 J - Left
 K - Fall through platform
 L - Right
-/ - Dash
-O - Attack";
+. - Dash
+/ - Attack";
 
 </string>
           </argument>
