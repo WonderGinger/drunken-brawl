@@ -42,6 +42,7 @@
     <script>scripts\sc_health.gml</script>
     <script>scripts\sc_reset.gml</script>
     <script>scripts\sc_player_hit.gml</script>
+    <script>scripts\sc_game_over.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\f_menu</font>
@@ -59,6 +60,7 @@
     <object>objects\o_dash_dust</object>
     <object>objects\o_out_of_bounds</object>
     <objects name="utility">
+      <object>objects\o_game_over</object>
       <object>objects\o_menu</object>
       <object>objects\o_tutorial</object>
       <object>objects\o_camera</object>
