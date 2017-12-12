@@ -53,7 +53,7 @@ L - Right
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="0">
+    <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -78,7 +78,7 @@ draw_set_alpha(1);
 draw_set_colour(c_white);
 draw_rectangle(75,75,600,325,1);
 draw_set_font(f_menu);
-var scale = 0.5;
+var scale = 0.3;
 draw_set_valign(fa_middle);
 draw_set_halign(fa_left);
 draw_text_transformed(100,100, controls_global, scale,scale,0);
