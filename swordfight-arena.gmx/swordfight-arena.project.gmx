@@ -18,12 +18,13 @@
       <sprite>sprites\s_player_jump_fall</sprite>
       <sprite>sprites\s_player_jump_attack</sprite>
       <sprite>sprites\s_player_idle</sprite>
+      <sprite>sprites\s_player_hit</sprite>
     </sprites>
     <sprite>sprites\s_dust</sprite>
     <sprite>sprites\s_dash_dust</sprite>
     <sprite>sprites\s_out_of_bounds</sprite>
-    <sprite>sprites\s_p1_health</sprite>
     <sprite>sprites\s_p2_health</sprite>
+    <sprite>sprites\s_p1_health</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_forest_temp</background>
@@ -62,9 +63,9 @@
       <object>objects\o_tutorial</object>
       <object>objects\o_camera</object>
       <object>objects\o_player_hit</object>
-      <object>objects\o_health</object>
       <object>objects\o_pause</object>
       <object>objects\o_start</object>
+      <object>objects\o_health</object>
     </objects>
   </objects>
   <rooms name="rooms">
