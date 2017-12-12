@@ -52,7 +52,6 @@ alarm[0] = room_speed*2;
             <kind>1</kind>
             <string>/// RESET
 sc_reset();
-//instance_create(0,0,o_camera);
 o_player_1.invincible = false;
 o_player_2.invincible = false;
 instance_create(0,0,o_start);

@@ -11,3 +11,4 @@ with(o_player_2) {
     st_player = ps.idle;
     img_spd = .12;
 }
+
