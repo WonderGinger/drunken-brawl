@@ -68,11 +68,13 @@
       <object>objects\o_pause</object>
       <object>objects\o_start</object>
       <object>objects\o_health</object>
+      <object>objects\o_result</object>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\r_splash</room>
     <room>rooms\r_tutorial</room>
+    <room>rooms\r_result</room>
     <room>rooms\r_arena</room>
   </rooms>
   <help>

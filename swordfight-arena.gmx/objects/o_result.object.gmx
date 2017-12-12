@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -26,7 +26,37 @@
           <argument>
             <kind>1</kind>
             <string>winner = 0;
-alarm[0] = room_speed * 2;
+alarm[0] = room_speed * 6; //6 seconds
+alarm[1] = 1; // 1 frame, winner should be initialized by then.
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// PUT PLAYER DOWN
+
+if(winner == 1)
+    instance_create(782,472,o_player_1);
+else
+    instance_create(782,472,o_player_2);
+p_player.st_player = ps.idle;
 </string>
           </argument>
         </arguments>
@@ -49,11 +79,9 @@ alarm[0] = room_speed * 2;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// GOTO RESULT
-results_screen = true;
-room_goto(r_result);
-instance_create(0,0,o_result);
-o_result.winner = winner;
+            <string>/// GOTO MENU, INSTANCE_DESTROY
+instance_destroy();
+room_goto(r_splash);
 </string>
           </argument>
         </arguments>
@@ -76,12 +104,41 @@ o_result.winner = winner;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// GAME! 
+            <string>/// WINNER: 
 display_set_gui_size(room_width, room_height);
 draw_set_colour(c_white);
 
-draw_text_transformed(room_width/2, room_height/2, "GAME!", 1.5, 1.5, 0);
+draw_text_transformed(
+    room_width/2, 250, 
+    "WINNER: PLAYER " + string(winner) + "!", 
+    1, 1, 0
+);
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// FIREWORKS
+if(random(30) &lt;= 1)
+    effect_create_above(ef_firework, random(room_width), random(room_height), choose(0, 1, 2), make_colour_hsv(random(255), 255, 255));
 </string>
           </argument>
         </arguments>

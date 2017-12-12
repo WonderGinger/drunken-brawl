@@ -114,7 +114,7 @@ st_player = ps.move;
             <kind>1</kind>
             <string>///STATE MACHINE
 sc_getinputs(1);
-if (hp &lt; 1) sc_game_over(2);
+if (hp &lt; 1) sc_game_over(1);
 switch (st_player)
 {
     case ps.idle: {
