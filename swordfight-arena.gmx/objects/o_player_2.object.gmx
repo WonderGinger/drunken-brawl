@@ -185,6 +185,7 @@ switch (st_player)
                 with(instance_place(x,y,o_player_1)){
                     if(!invincible){
                         hp -= 1;
+                        sprite_index = s_player2_hit;
                         sc_player_hit();
                     }
                 }
