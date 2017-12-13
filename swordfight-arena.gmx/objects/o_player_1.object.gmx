@@ -169,6 +169,8 @@ switch (st_player)
         }
     } break;
     case ps.dash: {
+        image_speed = 0.4;
+        sprite_index = s_player_dash;
         sc_dash();
     } break;
     case ps.attack: {
