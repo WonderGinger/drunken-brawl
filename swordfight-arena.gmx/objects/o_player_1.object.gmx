@@ -32,6 +32,7 @@ speed_y = 0;
 jumpspeed = 10;
 movespeed = 6;
 img_spd = .12;
+image_index = s_player_idle;
 image_speed = img_spd;
 image_xscale = 1;
 jumpsquat = false;
@@ -185,16 +186,15 @@ switch (st_player)
                 with(instance_place(x,y,o_player_2)){
                     if(!invincible){
                         hp -= 1;
-                        sprite_index = s_player_hit;
+                        sprite_index = s_player2_hit;
                         sc_player_hit();
                     }
                 }
             }        
         }    
     } break;
-    case ps.frozen: {
-        sprite_index = s_player_idle;
-        image_speed = img_spd;
+    case ps.frozen: { // Set the player's ideal sprite_index before setting their state to frozen.
+
     } break;
     default: {
         show_debug_message("Default state (missing break statement)");
