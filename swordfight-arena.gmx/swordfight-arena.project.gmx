@@ -40,6 +40,11 @@
   <backgrounds name="background">
     <background>background\bg_forest_temp</background>
     <background>background\bg_splash</background>
+    <background>background\bg_stage</background>
+    <background>background\bg_buildings1</background>
+    <background>background\bg_buildings2</background>
+    <background>background\bg_sky</background>
+    <background>background\bg_sun</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -54,6 +59,7 @@
     <script>scripts\sc_reset.gml</script>
     <script>scripts\sc_player_hit.gml</script>
     <script>scripts\sc_game_over.gml</script>
+    <script>scripts\sc_parallax.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\f_menu</font>
