@@ -28,7 +28,6 @@
             <string>/// ZOOM, ALARM
 zoom_factor = 1;
 alarm[0] = room_speed*2;
-with(o_camera) instance_destroy();
 </string>
           </argument>
         </arguments>
@@ -56,7 +55,6 @@ sc_reset();
 o_player_1.invincible = false;
 o_player_2.invincible = false;
 instance_create(0,0,o_start);
-instance_create(0,0,o_camera);
 </string>
           </argument>
         </arguments>
