@@ -9,6 +9,17 @@
     <sprite>sprites\s_platform</sprite>
     <sprite>sprites\s_wall</sprite>
     <sprite>sprites\s_hitbox</sprite>
+    <sprites name="Player2">
+      <sprite>sprites\s_player2_walk</sprite>
+      <sprite>sprites\s_player2_jump</sprite>
+      <sprite>sprites\s_player2_dash</sprite>
+      <sprite>sprites\s_player2_run</sprite>
+      <sprite>sprites\s_player2_attack</sprite>
+      <sprite>sprites\s_player2_jump_fall</sprite>
+      <sprite>sprites\s_player2_jump_attack</sprite>
+      <sprite>sprites\s_player2_idle</sprite>
+      <sprite>sprites\s_player2_hit</sprite>
+    </sprites>
     <sprites name="Player">
       <sprite>sprites\s_player_walk</sprite>
       <sprite>sprites\s_player_jump</sprite>

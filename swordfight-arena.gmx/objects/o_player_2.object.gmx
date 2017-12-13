@@ -119,12 +119,12 @@ switch (st_player)
 {
     case ps.idle: {
         sc_move();
-        sprite_index = s_player_idle;
+        sprite_index = s_player2_idle;
         image_speed = img_spd;
         if(jumpsquat || key_left || key_right) st_player = ps.move;
         if(key_attack) {
             st_player = ps.attack; 
-            sprite_index = s_player_attack;
+            sprite_index = s_player2_attack;
             image_index = 0;
         }
     } break;
@@ -133,30 +133,30 @@ switch (st_player)
         image_speed = img_spd;
         if(jumpsquat){
             st_player = ps.jump; 
-            sprite_index = s_player_jump;
+            sprite_index = s_player2_jump;
             break;
         }
         
         //Animation
         if(grounded &amp;&amp; abs(speed_x) &gt; movespeed-1) 
-            sprite_index = s_player_run;
-        else if (grounded) sprite_index = s_player_walk;
+            sprite_index = s_player2_run;
+        else if (grounded) sprite_index = s_player2_walk;
         
         if(abs(speed_x) &lt; .2 &amp;&amp; abs(speed_y) &lt; 1) {
             st_player = ps.idle;
         }
         if(key_attack) {
             st_player = ps.attack; 
-            sprite_index = s_player_attack;
+            sprite_index = s_player2_attack;
             image_index = 0;
         }
     } break;
     case ps.jump: {
         sc_move();
-        if(sprite_index == s_player_jump) {
+        if(sprite_index == s_player2_jump) {
             image_speed = .25;
             if(image_index &gt; image_number - 1){
-                sprite_index = s_player_jump_fall;
+                sprite_index = s_player2_jump_fall;
                 image_speed = img_spd;
                 jumpsquat = false;
             }
@@ -164,7 +164,7 @@ switch (st_player)
         if(grounded) st_player = ps.move;
         if(key_attack) { 
             st_player = ps.attack; 
-            sprite_index = s_player_jump_attack;
+            sprite_index = s_player2_jump_attack;
             image_index = 0;
         }
     } break;
@@ -189,7 +189,7 @@ switch (st_player)
         }    
     } break;
     case ps.frozen: {
-        sprite_index = s_player_idle;
+        sprite_index = s_player2_idle;
         image_speed = img_spd;
     } break;
     default: {
