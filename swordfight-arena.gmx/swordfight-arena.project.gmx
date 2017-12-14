@@ -10,6 +10,7 @@
     <sound>sound\snd_dash</sound>
     <sound>sound\snd_count</sound>
     <sound>sound\snd_gg</sound>
+    <sound>sound\snd_soundtrack</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\s_platform</sprite>

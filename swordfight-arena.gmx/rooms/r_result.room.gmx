@@ -132,6 +132,7 @@
     <instance objName="o_out_of_bounds" x="44" y="827" name="inst_4511FF65" locked="0" code="" scaleX="3.09375" scaleY="0.96875" colour="4294967295" rotation="0"/>
     <instance objName="o_out_of_bounds" x="694" y="806" name="inst_95287AF9" locked="0" code="" scaleX="5.9375" scaleY="0.59375" colour="4294967295" rotation="0"/>
     <instance objName="o_out_of_bounds" x="1505" y="810" name="inst_4A2A85B3" locked="0" code="" scaleX="1.8400000333786" scaleY="0.4375" colour="4294967295" rotation="0"/>
+    <instance objName="o_vanity" x="184" y="366" name="inst_B89AE6CB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
