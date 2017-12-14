@@ -117,9 +117,9 @@
     <instance objName="o_wall" x="0" y="32" name="inst_D459AD00" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_wall" x="0" y="0" name="inst_4E65D971" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_player_1" x="172" y="750" name="inst_ABC68E03" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_pause" x="448" y="288" name="inst_B2B2B8D7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_pause" x="582" y="266" name="inst_B2B2B8D7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_wall" x="1568" y="0" name="inst_F724FD72" locked="0" code="" scaleX="1" scaleY="27" colour="4294967295" rotation="0"/>
-    <instance objName="o_tutorial" x="0" y="0" name="inst_50FCC358" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_tutorial" x="86" y="138" name="inst_50FCC358" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_platform" x="655" y="473" name="inst_2F2A9D73" locked="0" code="" scaleX="8.4399995803833" scaleY="1.0625" colour="4294967295" rotation="0"/>
     <instance objName="o_wall" x="1567" y="670" name="inst_ADA567F6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_wall" x="672" y="864" name="inst_F6CD25B7" locked="0" code="" scaleX="12" scaleY="0.8125" colour="4294967295" rotation="0"/>
@@ -134,7 +134,7 @@
     <instance objName="o_out_of_bounds" x="44" y="827" name="inst_4511FF65" locked="0" code="" scaleX="3.09375" scaleY="0.96875" colour="4294967295" rotation="0"/>
     <instance objName="o_out_of_bounds" x="694" y="806" name="inst_95287AF9" locked="0" code="" scaleX="5.9375" scaleY="0.59375" colour="4294967295" rotation="0"/>
     <instance objName="o_out_of_bounds" x="1505" y="810" name="inst_4A2A85B3" locked="0" code="" scaleX="1.8400000333786" scaleY="0.4375" colour="4294967295" rotation="0"/>
-    <instance objName="o_vanity" x="129" y="281" name="inst_9EF2322A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_vanity" x="579" y="242" name="inst_9EF2322A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

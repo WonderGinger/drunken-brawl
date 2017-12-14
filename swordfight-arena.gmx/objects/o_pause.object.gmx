@@ -30,7 +30,6 @@ pause = 0;
 menu[0] = "Continue";
 menu[1] = "Restart";
 menu[2] = "Exit to menu";
-menu[3] = "Quit";
 
 padding = 64;
 mpos = 0;
@@ -59,15 +58,21 @@ mpos = 0;
             <string>/// Menu actions
 if(!pause) exit;
 var move = 0;
-move -= max( keyboard_check_pressed(ord('W')), keyboard_check_pressed(ord('I')), 0);
-move += max( keyboard_check_pressed(ord('S')), keyboard_check_pressed(ord('K')), 0);
+move -= max( keyboard_check_pressed(ord('W')), keyboard_check_pressed(vk_up), 0);
+move += max( keyboard_check_pressed(ord('S')), keyboard_check_pressed(vk_down), 0);
 
 if(move != 0){
     mpos += move;
     if(mpos &lt; 0) mpos = array_length_1d(menu) - 1;
     if(mpos &gt; array_length_1d(menu) - 1) mpos = 0;
 }
-var push = max(0, keyboard_check_released(vk_space), keyboard_check_released(vk_enter));
+var p1_push = keyboard_check_pressed(ord('C')) || keyboard_check_pressed(ord('F'))
+        || keyboard_check_pressed(ord('H')) || keyboard_check_pressed(ord('B'))
+        || keyboard_check_pressed(ord('G')) || keyboard_check(ord('V'));
+var p2_push = keyboard_check_pressed(190) || keyboard_check_pressed(ord('L'))
+        || keyboard_check_pressed(191) || keyboard_check_pressed(186) 
+        || keyboard_check_pressed(ord('K')) || keyboard_check_pressed(188);
+var push = max(0, p1_push, p2_push);
 if(push == 1) sc_pause();
 </string>
           </argument>
@@ -121,7 +126,41 @@ if(pause){
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="27">
+    <event eventtype="9" enumb="50">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// PAUSE OR UNPAUSE
+
+if(!pause){ // Pausing
+    pause = 1;
+    mpos = 0;
+    instance_deactivate_all(true);
+}
+else { //Unpausing
+    pause = 0;
+
+    instance_activate_all();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="49">
       <action>
         <libid>1</libid>
         <id>603</id>
