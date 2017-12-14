@@ -42,6 +42,7 @@
     <sprite>sprites\s_out_of_bounds</sprite>
     <sprite>sprites\s_p2_health</sprite>
     <sprite>sprites\s_p1_health</sprite>
+    <sprite>sprites\s_fan</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_forest_temp</background>
@@ -92,6 +93,7 @@
       <object>objects\o_start</object>
       <object>objects\o_health</object>
       <object>objects\o_result</object>
+      <object>objects\o_vanity</object>
     </objects>
   </objects>
   <rooms name="rooms">
