@@ -4,7 +4,13 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_slash</sound>
+    <sound>sound\snd_hit</sound>
+    <sound>sound\snd_dash</sound>
+    <sound>sound\snd_count</sound>
+    <sound>sound\snd_gg</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\s_platform</sprite>
     <sprite>sprites\s_wall</sprite>

@@ -30,6 +30,9 @@ o_player_1.st_player = ps.frozen;
 o_player_2.st_player = ps.frozen;
 alarm[0] = timer;
 alarm[1] = timer - room_speed;
+
+audio_play_sound(snd_count, 1, false);
+
 </string>
           </argument>
         </arguments>

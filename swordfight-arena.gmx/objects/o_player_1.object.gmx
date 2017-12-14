@@ -115,7 +115,12 @@ st_player = ps.move;
             <kind>1</kind>
             <string>///STATE MACHINE
 sc_getinputs(0);
-if (hp &lt; 1) sc_game_over(2);
+if (hp &lt; 1) {
+    sc_game_over(2);
+    if !audio_is_playing(snd_gg){
+        audio_play_sound(snd_gg, 1, false);
+    }   
+}
 switch (st_player)
 {
     case ps.idle: {
@@ -126,6 +131,7 @@ switch (st_player)
         if(key_attack) {
             st_player = ps.attack; 
             sprite_index = s_player_attack;
+            audio_play_sound(snd_slash, 1, false);
             image_index = 0;
         }
     } break;
@@ -149,6 +155,7 @@ switch (st_player)
         if(key_attack) {
             st_player = ps.attack; 
             sprite_index = s_player_attack;
+            audio_play_sound(snd_slash, 1, false);
             image_index = 0;
         }
     } break;
@@ -166,6 +173,7 @@ switch (st_player)
         if(key_attack) { 
             st_player = ps.attack; 
             sprite_index = s_player_jump_attack;
+            audio_play_sound(snd_slash, 1, false);
             image_index = 0;
         }
     } break;
@@ -187,6 +195,7 @@ switch (st_player)
                     if(!invincible){
                         hp -= 1;
                         sprite_index = s_player2_hit;
+                        audio_play_sound(snd_hit, 1, false);
                         sc_player_hit();
                     }
                 }

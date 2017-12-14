@@ -20,6 +20,7 @@ sc_jump();
 if(key_dash && (key_left || key_right)) { // If dash key pressed, and not going too slow.
     if(speed_y != 0) speed_y = 0;
     st_player = ps.dash;
+    audio_play_sound(snd_dash, 1, false);
     alarm[0] = room_speed/7; //Length of dash
 }
 
